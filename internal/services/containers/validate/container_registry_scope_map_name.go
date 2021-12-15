@@ -9,7 +9,7 @@ func ContainerRegistryScopeMapName(v interface{}, k string) (warnings []string, 
 	value := v.(string)
 	if !regexp.MustCompile(`^[_][a-zA-Z0-9_]$`).MatchString(value) {
 		errors = append(errors, fmt.Errorf(
-			"alpha numeric characters and hyphens only are allowed in %q: %q", k, value))
+			"alpha numeric characters and hyphen only are allowed in %q: %q", k, value))
 	}
 
 	if 5 > len(value) {
