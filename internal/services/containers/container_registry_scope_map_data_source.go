@@ -22,8 +22,9 @@ func dataSourceContainerRegistryScopeMap() *pluginsdk.Resource {
 
 		Schema: map[string]*pluginsdk.Schema{
 			"name": {
-				Type:     pluginsdk.TypeString,
-				Required: true,
+				Type:         pluginsdk.TypeString,
+				Required:     true,
+				ValidateFunc: validate.ContainerRegistryScopeMapName,
 			},
 			"container_registry_name": {
 				Type:         pluginsdk.TypeString,
